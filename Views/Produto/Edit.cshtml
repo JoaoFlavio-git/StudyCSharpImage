@@ -1,0 +1,35 @@
+﻿@model Imagens.Models.Produto
+
+@{ ViewData["Title"] = "Editar"; }
+
+<h1>Editar Produto</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Valor" class="control-label"></label>
+                <input asp-for="Valor" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Foto" class="control-label">Trocar Imagem</label>
+                <input type="file" name="Img" id="Img" class="form-control" />
+                <span asp-validation-for="Foto" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Alterar" class="btn btn-primary btn-sm" />
+                <a class="btn btn-secondary btn-sm text-white" asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
